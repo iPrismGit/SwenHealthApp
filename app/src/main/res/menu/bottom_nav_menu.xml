@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home_nav"
+        android:title="Home"
+        android:icon="@drawable/home_icon"/>
+    <item
+        android:id="@+id/hospitals_nav"
+        android:title="Hospitals"
+        android:icon="@drawable/hospitals_icon"/>
+    <item
+        android:id="@+id/medicines_nav"
+        android:title="Medicines"
+        android:icon="@drawable/medicines_icon"/>
+    <item
+        android:id="@+id/lab_tests_nav"
+        android:title="Lab Tests"
+        android:icon="@drawable/lab_tests_icon"/>
+
+    <item
+        android:id="@+id/diagnostic_nav"
+        android:title="Diagnostic"
+        android:icon="@drawable/diagnostic_icon"/>
+
+</menu>

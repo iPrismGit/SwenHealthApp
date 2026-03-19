@@ -6,16 +6,17 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.iprism.swenhealth.databinding.ActivityOtpVerificationBinding
+import com.iprism.swenhealth.databinding.ActivityLocationPermissionsBinding
+import com.iprism.swenhealth.utils.ToastUtils
 
-class OtpVerificationActivity : AppCompatActivity() {
+class LocationPermissionsActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityOtpVerificationBinding
+    private lateinit var binding: ActivityLocationPermissionsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityOtpVerificationBinding.inflate(layoutInflater)
+        binding = ActivityLocationPermissionsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -23,19 +24,19 @@ class OtpVerificationActivity : AppCompatActivity() {
             insets
         }
         handleBack()
-        handleLoginBtn()
+        handleEnableBtn()
     }
 
-    private fun handleLoginBtn() {
-        binding.loginBtn.setOnClickListener { v ->
-            startActivity(Intent(this, SignUpActivity::class.java))
-        }
+    private fun handleEnableBtn() {
+       binding.enableBtn.setOnClickListener { p0 ->
+           ToastUtils.showSuccessCustomToast(this, "Location Permissions Enabled Successfully..!")
+           startActivity(Intent(this, MainActivity::class.java))
+       }
     }
 
     private fun handleBack() {
-        binding.backImg.setOnClickListener { v ->
+        binding.backImg.setOnClickListener { p0 ->
             finish()
         }
     }
-
 }

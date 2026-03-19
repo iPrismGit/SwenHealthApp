@@ -6,16 +6,17 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.iprism.swenhealth.databinding.ActivityOtpVerificationBinding
+import com.iprism.swenhealth.R
+import com.iprism.swenhealth.databinding.ActivitySignUpBinding
 
-class OtpVerificationActivity : AppCompatActivity() {
+class SignUpActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityOtpVerificationBinding
+    private lateinit var binding: ActivitySignUpBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityOtpVerificationBinding.inflate(layoutInflater)
+        binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -23,19 +24,20 @@ class OtpVerificationActivity : AppCompatActivity() {
             insets
         }
         handleBack()
-        handleLoginBtn()
+        handleSignUpBtn()
     }
 
-    private fun handleLoginBtn() {
-        binding.loginBtn.setOnClickListener { v ->
-            startActivity(Intent(this, SignUpActivity::class.java))
+    private fun handleSignUpBtn() {
+        binding.signupBtn.setOnClickListener { p0 ->
+            startActivity(Intent(this, LocationPermissionsActivity::class.java))
         }
     }
 
     private fun handleBack() {
-        binding.backImg.setOnClickListener { v ->
+        binding.backIv.setOnClickListener { v ->
             finish()
         }
     }
+
 
 }
