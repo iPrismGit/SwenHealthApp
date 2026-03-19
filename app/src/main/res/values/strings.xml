@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SwenHealth</string>
+    <string name="book_consultations">“Book consultations with our top doctors near\n you—fast, easy, and hassle-free!”</string>
+    <string name="terms_and_conditions"><![CDATA[Terms & Conditions]]></string>
+</resources>
