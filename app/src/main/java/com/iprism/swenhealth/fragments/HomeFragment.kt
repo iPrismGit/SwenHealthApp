@@ -1,5 +1,6 @@
 package com.iprism.swenhealth.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iprism.swenhealth.R
+import com.iprism.swenhealth.activities.RedeemDiscountCouponsActivity
 import com.iprism.swenhealth.adapters.CategoriesAdapter
 import com.iprism.swenhealth.databinding.FragmentHomeBinding
 import com.iprism.swenhealth.databinding.FragmentMedicinesBinding
@@ -27,7 +29,14 @@ class HomeFragment : Fragment() {
         setupQuotesRecyclerView()
         setupHomeVisitServicesRecyclerView()
         setupHealthEducationCategoriesRecyclerView()
+        handleRedeemCouponsLo()
         return binding.root
+    }
+
+    private fun handleRedeemCouponsLo() {
+        binding.redeemCouponsLo.setOnClickListener { v ->
+            startActivity(Intent(requireContext(), RedeemDiscountCouponsActivity::class.java))
+        }
     }
 
     private fun setupQuotesRecyclerView() {
