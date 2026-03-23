@@ -1,14 +1,634 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="@color/app_secondary_color">
+
+                    <ImageView
+                        android:layout_width="126dp"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:layout_gravity="center"
+                        android:src="@drawable/app_corved_logo"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingVertical="10dp">
+                        
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/menu_icon"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginStart="12dp"
+                                android:src="@drawable/location_icon"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="14dp"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="12dp"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="Gachibowli"/>
+
+                            <ImageView
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                app:tint="@color/white"
+                                android:layout_marginStart="6dp"
+                                android:src="@drawable/down_arrow_img"/>
+
+                        </LinearLayout>
+
+
+                        <ImageView
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:src="@drawable/notifictions_icon"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text="Hi, "
+                            android:textSize="14dp"
+                            android:fontFamily="@font/montserrat_medium" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text="Ganesh Veer"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/montserrat_bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@drawable/edit_text_transparent_bg"
+                        android:gravity="center_vertical"
+                        android:layout_marginVertical="16dp"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/search__icon"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:hint="Search"
+                            android:layout_marginStart="12dp"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/montserrat_medium" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:orientation="horizontal">
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollbars="none">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/request_ambulance_lo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginEnd="6dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="86dp"
+                                        android:layout_height="86dp"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/book_ambulance_img" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="6dp"
+                                        android:fontFamily="@font/montserrat"
+                                        android:gravity="center"
+                                        android:text="Book Ambulance"
+                                        android:textColor="@color/black"
+                                        android:textSize="12dp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/refer_an_admission_lo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="6dp"
+                                    android:layout_marginEnd="6dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="86dp"
+                                        android:layout_height="86dp"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/hospital_admission_img" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="6dp"
+                                        android:fontFamily="@font/montserrat"
+                                        android:gravity="center"
+                                        android:text="Hospital
+Admission"
+                                        android:textColor="@color/black"
+                                        android:textSize="12dp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/reffer_a_diagnostic_lo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="6dp"
+                                    android:layout_marginEnd="6dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+
+                                    <ImageView
+                                        android:layout_width="86dp"
+                                        android:layout_height="86dp"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/health_ins_admission_img" />
+
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="6dp"
+                                        android:fontFamily="@font/montserrat"
+                                        android:gravity="center"
+                                        android:text="Health Ins
+Admission"
+                                        android:textColor="@color/black"
+                                        android:textSize="12dp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/send_insurence_pre_auth_lo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="6dp"
+                                    android:layout_marginEnd="6dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="86dp"
+                                        android:layout_height="86dp"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/online_doctor_img" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="6dp"
+                                        android:fontFamily="@font/montserrat"
+                                        android:gravity="center"
+
+                                        android:maxLines="2"
+                                        android:text="Online\n
+Doctor"
+                                        android:textColor="@color/black"
+                                        android:textSize="12dp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/hospital_assist_lo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="6dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="86dp"
+                                        android:layout_height="86dp"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/hospital_admission_img" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="6dp"
+                                        android:fontFamily="@font/montserrat"
+                                        android:gravity="center"
+                                        android:text="Whatsapp Assistance"
+                                        android:textColor="@color/black"
+                                        android:textSize="12dp" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </HorizontalScrollView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/top_banners_slider_lo"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:orientation="vertical"
+                        android:layout_marginTop="16dp">
+
+                        <com.smarteist.autoimageslider.SliderView
+                            android:id="@+id/top_banners_slider"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="16dp"
+                            android:background="@drawable/banner_img"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Featured Services"
+                        android:paddingHorizontal="16dp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:textSize="16dp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="12dp"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/symptoms_doctors_lo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginVertical="10dp"
+                        app:cardBackgroundColor="#FEF1E2"
+                        app:strokeWidth="0dp"
+                        app:cardCornerRadius="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="8dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="86dp"
+                                    android:layout_height="86dp"
+                                    android:gravity="center"
+                                    android:background="@drawable/white_round_bg">
+
+                                    <ImageView
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/lab_img" />
+
+                                </LinearLayout>
+
+
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:fontFamily="@font/montserrat"
+                                    android:gravity="center"
+                                    android:text="Book
+Diagnostic Test"
+                                    android:textColor="@color/black"
+                                    android:textSize="10dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="8dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="86dp"
+                                    android:layout_height="86dp"
+                                    android:gravity="center"
+                                    android:background="@drawable/white_round_bg">
+
+                                    <ImageView
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/redeem_img" />
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:fontFamily="@font/montserrat"
+                                    android:gravity="center"
+                                    android:text="Redeem Coupon Discount"
+                                    android:textColor="@color/black"
+                                    android:textSize="10dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="8dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="86dp"
+                                    android:layout_height="86dp"
+                                    android:gravity="center"
+                                    android:background="@drawable/white_round_bg">
+
+                                    <ImageView
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/free_video_consultation_img" />
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:fontFamily="@font/montserrat"
+                                    android:gravity="center"
+                                    android:text="Free Video
+Consultation"
+                                    android:textColor="@color/black"
+                                    android:textSize="10dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Book Doctor Appointment"
+                        android:paddingHorizontal="16dp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:textSize="16dp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="12dp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/doctor_appointments_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Book Doctor With Symptoms"
+                        android:paddingHorizontal="16dp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:textSize="16dp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="12dp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/doctor_symptoms_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp" />
+
+                    <LinearLayout
+                        android:id="@+id/banners_slider2_lo"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:orientation="vertical"
+                        android:layout_marginTop="16dp">
+
+                        <com.smarteist.autoimageslider.SliderView
+                            android:id="@+id/banners_slider2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="16dp"
+                            android:background="@drawable/banner_img"/>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingVertical="12dp"
+                        android:background="#E1CBCB">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Choose Surgeon With Symptoms"
+                            android:paddingHorizontal="16dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/surgeon_symptoms_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Book Home Visit Services"
+                            android:paddingHorizontal="16dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/home_visit_services_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/_banners_slider3_lo"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:orientation="vertical"
+                        android:layout_marginTop="16dp">
+
+                        <com.smarteist.autoimageslider.SliderView
+                            android:id="@+id/banners_slider3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="16dp"
+                            android:background="@drawable/banner_img"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingVertical="12dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Get A Best Quote"
+                            android:paddingHorizontal="16dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/quotes_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Health Education"
+                            android:paddingHorizontal="16dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/health_education_categories_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/bottom_banners_slider_lo"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:orientation="vertical"
+                        android:layout_marginTop="16dp">
+
+                        <com.smarteist.autoimageslider.SliderView
+                            android:id="@+id/bottom_banners_slider"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="16dp"
+                            android:background="@drawable/banner_img"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

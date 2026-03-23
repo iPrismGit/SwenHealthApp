@@ -16,6 +16,7 @@ swipeRefreshLayout = "1.2.0"
 photoview = "2.3.0"
 ucrop = "2.2.11"
 shimmer = "0.5.0"
+androidImageSlider = "1.4.1"
 retrofit = "3.0.0"
 lifecycle = "2.10.0"
 appupdate = "2.1.0"
@@ -36,6 +37,7 @@ avloading = { module = "io.github.maitrungduc1410:AVLoadingIndicatorView", versi
 swipe-refresh-layout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swipeRefreshLayout" }
 ucrop = { module = "com.github.yalantis:ucrop", version.ref = "ucrop" }
 facebook-shimmer = { module = "com.facebook.shimmer:shimmer", version.ref = "shimmer" }
+android-image-slider = { module = "com.github.koai-dev:Android-Image-Slider", version.ref = "androidImageSlider" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }

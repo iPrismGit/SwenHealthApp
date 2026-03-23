@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.photoview)
     implementation(libs.ucrop)
     implementation(libs.facebook.shimmer)
+    implementation(libs.android.image.slider)
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
     implementation(libs.app.update)
