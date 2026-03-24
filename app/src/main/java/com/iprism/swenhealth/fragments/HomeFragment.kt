@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iprism.swenhealth.R
 import com.iprism.swenhealth.activities.DoctorAppointmentCategoriesActivity
+import com.iprism.swenhealth.activities.MainActivity
 import com.iprism.swenhealth.activities.RedeemDiscountCouponsActivity
 import com.iprism.swenhealth.adapters.CategoriesAdapter
 import com.iprism.swenhealth.databinding.FragmentHomeBinding
@@ -87,7 +88,9 @@ class HomeFragment : Fragment() {
                     val intent = Intent(requireContext(), DoctorAppointmentCategoriesActivity::class.java)
                     startActivity(intent)
                 } else{
-
+                    val intent = Intent(requireContext(), MainActivity::class.java)
+                    intent.putExtra("fragment", "Hospitals")
+                    startActivity(intent)
                 }
 
             }

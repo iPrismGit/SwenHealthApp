@@ -25,6 +25,22 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        fragment = intent.getStringExtra("fragment").toString()
+        setupViewPager()
+        setupFragmentLoading()
+    }
+
+    private fun setupFragmentLoading() {
+        if (fragment.isEmpty()) {
+            binding.bottomNavigationView.selectedItemId = R.id.home_nav
+            binding.viewPager.setCurrentItem(0, false)
+        } else if (fragment.equals("Hospitals", true)) {
+            binding.bottomNavigationView.selectedItemId = R.id.hospitals_nav
+            binding.viewPager.setCurrentItem(1, false)
+        }
+    }
+
+    private fun setupViewPager() {
         val adapter = HomePagerAdapter(this)
         binding.viewPager.isUserInputEnabled = false
         binding.viewPager.adapter = adapter

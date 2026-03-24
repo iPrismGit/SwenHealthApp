@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.iprism.swenhealth.R
+import com.iprism.swenhealth.adapters.HospitalsAdapter
 import com.iprism.swenhealth.databinding.FragmentHospitalsBinding
 import com.iprism.swenhealth.databinding.FragmentMedicinesBinding
 
@@ -18,7 +20,15 @@ class HospitalsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHospitalsBinding.inflate(inflater, container, false)
+        setupHospitalAdapter()
         return binding.root
+    }
+
+    private fun setupHospitalAdapter() {
+        val adapter = HospitalsAdapter()
+        val linearLayout = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        binding.hospitalsRv.layoutManager = linearLayout
+        binding.hospitalsRv.adapter = adapter
     }
 
 }

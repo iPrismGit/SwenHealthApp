@@ -1,5 +1,6 @@
 package com.iprism.swenhealth.activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.iprism.swenhealth.R
 import com.iprism.swenhealth.adapters.DoctorAppointmentCategoriesAdapter
 import com.iprism.swenhealth.databinding.ActivityDoctorAppointmentCategoriesBinding
+import com.iprism.swenhealth.interfaces.OnServiceItemClickListener
 
 class DoctorAppointmentCategoriesActivity : AppCompatActivity() {
 
@@ -34,6 +36,14 @@ class DoctorAppointmentCategoriesActivity : AppCompatActivity() {
         binding.categoriesRv.adapter = adapter
         val layoutManager = GridLayoutManager(this, 4)
         binding.categoriesRv.layoutManager = layoutManager
+        adapter.setupListener(object : OnServiceItemClickListener{
+            override fun onItemClick(position: Int) {
+                val intent = Intent(this@DoctorAppointmentCategoriesActivity, MainActivity::class.java)
+                intent.putExtra("fragment", "Hospitals")
+                startActivity(intent)
+            }
+
+        })
     }
 
     private fun handleBack() {
