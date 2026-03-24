@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SwenHealth">
         <activity
+            android:name=".activities.DoctorAppointmentCategoriesActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.RedeemDiscountCouponsActivity"
             android:exported="false" />
         <activity

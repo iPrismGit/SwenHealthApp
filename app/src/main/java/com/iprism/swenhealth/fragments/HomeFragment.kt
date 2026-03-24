@@ -9,10 +9,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iprism.swenhealth.R
+import com.iprism.swenhealth.activities.DoctorAppointmentCategoriesActivity
 import com.iprism.swenhealth.activities.RedeemDiscountCouponsActivity
 import com.iprism.swenhealth.adapters.CategoriesAdapter
 import com.iprism.swenhealth.databinding.FragmentHomeBinding
 import com.iprism.swenhealth.databinding.FragmentMedicinesBinding
+import com.iprism.swenhealth.interfaces.OnServiceItemClickListener
 
 class HomeFragment : Fragment() {
 
@@ -79,6 +81,18 @@ class HomeFragment : Fragment() {
         val linearLayout = GridLayoutManager(requireContext(), 4 )
         binding.doctorAppointmentsRv.layoutManager = linearLayout
         binding.doctorAppointmentsRv.adapter = adapter
+        adapter.setupListener(object : OnServiceItemClickListener{
+            override fun onItemClick(position: Int) {
+                if (position == 3){
+                    val intent = Intent(requireContext(), DoctorAppointmentCategoriesActivity::class.java)
+                    startActivity(intent)
+                } else{
+
+                }
+
+            }
+
+        })
     }
 
 }
