@@ -4,8 +4,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.iprism.swenhealth.databinding.DiagnosticPackageItemBinding
+import com.iprism.swenhealth.interfaces.OnPackageClickListener
 
 class DiagnosticPackagesAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+
+    private lateinit var listener: OnPackageClickListener
+
+    fun setupListener(listener: OnPackageClickListener){
+        this.listener = listener
+    }
 
     override fun onCreateViewHolder(
         p0: ViewGroup,
@@ -20,7 +27,9 @@ class DiagnosticPackagesAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder
         p1: Int
     ) {
         val holder = p0 as DiagnosticPackageViewHolder
-
+        holder.binding.root.setOnClickListener { p0 ->
+            listener.onIncludedTestsClickListener(holder.position)
+        }
 
     }
 

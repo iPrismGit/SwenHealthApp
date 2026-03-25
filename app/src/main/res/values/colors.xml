@@ -8,6 +8,7 @@
     <color name="red">#FF0000</color>
     <color name="lite_red">#FFC3C3</color>
     <color name="light_gray1">#B4B4B4</color>
+    <color name="light_gray">#F1F1F1</color>
     <color name="thick_gray1">#838383</color>
     <color name="ash_color">#D0D5EB</color>
     <color name="icon_un_selected_color">#D1D1D1</color>
