@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SwenHealth">
         <activity
+            android:name=".activities.SuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.OffersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.DiagnosticSummeryActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.AddMultiPatientsActivity"
             android:exported="false" />
         <activity

@@ -1,5 +1,6 @@
 package com.iprism.swenhealth.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
@@ -28,6 +29,13 @@ class AddMultiPatientsActivity : AppCompatActivity() {
         }
         handleBack()
         setUpFamilyMembers()
+        handleConfirmBtn()
+    }
+
+    private fun handleConfirmBtn() {
+        binding.continueBookingBtn.setOnClickListener { p0 ->
+            startActivity(Intent(this, DiagnosticSummeryActivity::class.java))
+        }
     }
 
     private fun setUpFamilyMembers() {
