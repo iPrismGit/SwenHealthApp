@@ -169,7 +169,6 @@
                 android:id="@+id/continue_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:fontFamily="@font/montserrat_semibold"
                 android:gravity="center"
                 android:paddingHorizontal="34dp"

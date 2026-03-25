@@ -1,6 +1,7 @@
 package com.iprism.swenhealth.activities
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -34,6 +35,13 @@ class DiagnosticPackagesActivity : AppCompatActivity() {
         }
         handleBack()
         setupAdapter()
+        handleContinueBtn()
+    }
+
+    private fun handleContinueBtn() {
+        binding.continueBtn.setOnClickListener { p0 ->
+            startActivity(Intent(this, DiagnosticTimeSlotsActivity::class.java))
+        }
     }
 
     private fun setupAdapter() {
