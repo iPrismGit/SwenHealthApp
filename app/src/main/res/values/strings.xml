@@ -4,4 +4,5 @@
     <string name="terms_and_conditions"><![CDATA[Terms & Conditions]]></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tests_text"><u>Includes 82 tests</u></string>
 </resources>

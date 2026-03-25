@@ -59,6 +59,7 @@
             android:padding="4dp">
 
             <TextView
+                android:id="@+id/name_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Swen Health Hospital"
@@ -67,6 +68,7 @@
                 android:textColor="@color/black"/>
 
             <TextView
+                android:id="@+id/timing_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Open 24 hours"
@@ -89,6 +91,7 @@
                     android:src="@drawable/location_icon"/>
 
                 <TextView
+                    android:id="@+id/location_txt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Open 24 hours"
