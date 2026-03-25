@@ -1,18 +1,26 @@
 package com.iprism.swenhealth.activities
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.iprism.swenhealth.R
 import com.iprism.swenhealth.adapters.DatesAdapter
 import com.iprism.swenhealth.adapters.OnSlotItemClickListener
+import com.iprism.swenhealth.adapters.TestsAdapter
 import com.iprism.swenhealth.adapters.TimeSlotsAdapter
 import com.iprism.swenhealth.databinding.ActivityDiagnosticTimeSlotsBinding
+import com.iprism.swenhealth.databinding.FamilyMembersBottomSheetBinding
+import com.iprism.swenhealth.databinding.TestsBottomSheetBinding
 import com.iprism.swenhealth.interfaces.OnDateClickListener
 
 class DiagnosticTimeSlotsActivity : AppCompatActivity() {
@@ -34,6 +42,32 @@ class DiagnosticTimeSlotsActivity : AppCompatActivity() {
         setupMorningTimesAdapter()
         setupAfternoonTimesAdapter()
         setupEveningTimesAdapter()
+        handleContinueBtn()
+    }
+
+    private fun handleContinueBtn() {
+       binding.continueBookingBtn.setOnClickListener { p0 ->
+           showMembersSelectionBottomSheet()
+       }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun showMembersSelectionBottomSheet() {
+        val bottomSheetDialog = BottomSheetDialog(this)
+        val testsBottomSheetBinding = FamilyMembersBottomSheetBinding.inflate(LayoutInflater.from(this))
+        bottomSheetDialog.setContentView(testsBottomSheetBinding.root)
+        bottomSheetDialog.setOnShowListener { dialog ->
+            val bottomSheet =
+                (dialog as BottomSheetDialog).findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
+            bottomSheet?.setBackgroundResource(R.drawable.top_edges_bg)
+        }
+        testsBottomSheetBinding.crossIv.setOnClickListener(View.OnClickListener {
+            bottomSheetDialog.cancel()
+        })
+       testsBottomSheetBinding.continueBookingBtn.setOnClickListener { p0 ->
+           startActivity(Intent(this, AddMultiPatientsActivity::class.java))
+       }
+        bottomSheetDialog.show()
     }
 
     private fun setupMorningTimesAdapter() {
