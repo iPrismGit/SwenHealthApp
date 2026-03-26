@@ -2,7 +2,11 @@
     <string name="app_name">SwenHealth</string>
     <string name="book_consultations">“Book consultations with our top doctors near\n you—fast, easy, and hassle-free!”</string>
     <string name="terms_and_conditions"><![CDATA[Terms & Conditions]]></string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tests_text"><u>Includes 82 tests</u></string>
+    <string name="name">Name<font fgcolor='#FF0000'>*</font></string>
+    <string name="contact_number">Contact Number<font fgcolor='#FF0000'>*</font></string>
+    <string name="dob">Date of Birth<font fgcolor='#FF0000'>*</font></string>
+
 </resources>

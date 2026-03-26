@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SwenHealth">
         <activity
+            android:name=".activities.DiagnosticPrescriptionCartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.DiagnosticPrescriptionFamilyMembersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.DignosticPrescriptionBookingActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.SuccessActivity"
             android:exported="false" />
         <activity

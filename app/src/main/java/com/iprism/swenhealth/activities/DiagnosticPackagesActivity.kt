@@ -18,6 +18,7 @@ import com.iprism.swenhealth.adapters.TestsAdapter
 import com.iprism.swenhealth.databinding.ActivityDiagnosticPackagesBinding
 import com.iprism.swenhealth.databinding.TestsBottomSheetBinding
 import com.iprism.swenhealth.interfaces.OnPackageClickListener
+import com.iprism.swenhealth.utils.ToastUtils
 
 class DiagnosticPackagesActivity : AppCompatActivity() {
 
@@ -36,6 +37,21 @@ class DiagnosticPackagesActivity : AppCompatActivity() {
         handleBack()
         setupAdapter()
         handleContinueBtn()
+        handleWhatsappLo()
+        handlePrescriptionLo()
+
+    }
+
+    private fun handlePrescriptionLo() {
+        binding.prescriptionLo.setOnClickListener { p0 ->
+            startActivity(Intent(this, DignosticPrescriptionBookingActivity::class.java))
+        }
+    }
+
+    private fun handleWhatsappLo() {
+        binding.whatsappLo.setOnClickListener { p0 ->
+            ToastUtils.showSuccessCustomToast(this, "Clicked On Whatsapp..!")
+        }
     }
 
     private fun handleContinueBtn() {
