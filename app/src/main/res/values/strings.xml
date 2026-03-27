@@ -8,5 +8,15 @@
     <string name="name">Name<font fgcolor='#FF0000'>*</font></string>
     <string name="contact_number">Contact Number<font fgcolor='#FF0000'>*</font></string>
     <string name="dob">Date of Birth<font fgcolor='#FF0000'>*</font></string>
-
+    <string name="dates_are_not_available">Dates are Not Available</string>
+    <string name="morning_slots_not_available">Morning Slots are Not Available</string>
+    <string name="afternoon_slots_not_available">Afternoon Slots are Not Available</string>
+    <string name="evening_slots_not_available">Evening Slots are Not Available</string>
+    <string name="morning">Morning</string>
+    <string name="evening">Evening</string>
+    <string name="afternoon">Afternoon</string>
+    <string name="total_charges">Total Charges</string>
+    <string name="coupon_discount">Coupon Discount</string>
+    <string name="consultation_fees">Consultation Fees</string>
+    <string name="pay_now">Pay Now</string>
 </resources>

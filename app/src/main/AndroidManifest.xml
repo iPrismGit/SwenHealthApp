@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SwenHealth">
         <activity
+            android:name=".activities.OnlineDoctorBookingSummeryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AddOnlineDoctorPatientDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.OnlineDoctorTimeSlotsActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.OnlineDoctorProfileActivity"
             android:exported="false" />
         <activity
