@@ -60,7 +60,6 @@ class DiagnosticSummeryActivity : AppCompatActivity() {
         })
     }
 
-
     @SuppressLint("SetTextI18n")
     private fun showPaymentTypeBottomSheet(context: Context) {
         val bottomSheetDialog = BottomSheetDialog(context)

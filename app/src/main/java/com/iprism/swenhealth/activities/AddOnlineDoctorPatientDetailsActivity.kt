@@ -35,7 +35,7 @@ class AddOnlineDoctorPatientDetailsActivity : AppCompatActivity() {
 
     private fun handleConfirmBtn() {
         binding.continueBookingBtn.setOnClickListener { p0 ->
-            startActivity(Intent(this, DiagnosticSummeryActivity::class.java))
+            startActivity(Intent(this, OnlineDoctorBookingSummeryActivity::class.java))
         }
     }
 
