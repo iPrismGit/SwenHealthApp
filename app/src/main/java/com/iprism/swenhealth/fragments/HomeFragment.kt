@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.iprism.swenhealth.R
 import com.iprism.swenhealth.activities.DoctorAppointmentCategoriesActivity
 import com.iprism.swenhealth.activities.MainActivity
+import com.iprism.swenhealth.activities.OnlineDoctorCategoriesActivity
 import com.iprism.swenhealth.activities.RedeemDiscountCouponsActivity
 import com.iprism.swenhealth.adapters.CategoriesAdapter
 import com.iprism.swenhealth.databinding.FragmentHomeBinding
@@ -33,7 +34,14 @@ class HomeFragment : Fragment() {
         setupHomeVisitServicesRecyclerView()
         setupHealthEducationCategoriesRecyclerView()
         handleRedeemCouponsLo()
+        handleOnlineDoctorLo()
         return binding.root
+    }
+
+    private fun handleOnlineDoctorLo() {
+        binding.onlineDoctorLo.setOnClickListener { p0 ->
+            startActivity(Intent(requireContext(), OnlineDoctorCategoriesActivity::class.java))
+        }
     }
 
     private fun handleRedeemCouponsLo() {

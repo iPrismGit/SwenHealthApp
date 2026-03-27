@@ -253,7 +253,7 @@ Admission"
                                 </LinearLayout>
 
                                 <LinearLayout
-                                    android:id="@+id/send_insurence_pre_auth_lo"
+                                    android:id="@+id/online_doctor_lo"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_marginStart="6dp"
@@ -284,7 +284,7 @@ Doctor"
                                 </LinearLayout>
 
                                 <LinearLayout
-                                    android:id="@+id/hospital_assist_lo"
+                                    android:id="@+id/whatsapp_assist_lo"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_marginStart="6dp"
