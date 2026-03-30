@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.iprism.swenhealth.R
 import com.iprism.swenhealth.adapters.DatesAdapter
-import com.iprism.swenhealth.adapters.OnSlotItemClickListener
+import com.iprism.swenhealth.interfaces.OnSlotItemClickListener
 import com.iprism.swenhealth.adapters.TestsAdapter
 import com.iprism.swenhealth.adapters.TimeSlotsAdapter
 import com.iprism.swenhealth.databinding.ActivityDiagnosticTimeSlotsBinding

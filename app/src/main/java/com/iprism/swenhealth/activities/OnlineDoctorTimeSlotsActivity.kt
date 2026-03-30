@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iprism.swenhealth.R
 import com.iprism.swenhealth.adapters.DatesAdapter
-import com.iprism.swenhealth.adapters.OnSlotItemClickListener
+import com.iprism.swenhealth.interfaces.OnSlotItemClickListener
 import com.iprism.swenhealth.adapters.TimeSlotsAdapter
 import com.iprism.swenhealth.databinding.ActivityOnlineDoctorProfileBinding
 import com.iprism.swenhealth.databinding.ActivityOnlineDoctorTimeSlotsBinding

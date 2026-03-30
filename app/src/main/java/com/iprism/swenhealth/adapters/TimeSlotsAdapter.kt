@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.iprism.swenhealth.R
 import com.iprism.swenhealth.databinding.TimeItemBinding
+import com.iprism.swenhealth.interfaces.OnSlotItemClickListener
 
 
 class TimeSlotsAdapter() : RecyclerView.Adapter<TimeSlotsAdapter.TimeSlotViewHolder>() {

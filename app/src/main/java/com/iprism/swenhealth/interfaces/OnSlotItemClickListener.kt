@@ -1,4 +1,4 @@
-package com.iprism.swenhealth.adapters
+package com.iprism.swenhealth.interfaces
 
 interface OnSlotItemClickListener {
 
