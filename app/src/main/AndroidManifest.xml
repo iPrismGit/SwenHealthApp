@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SwenHealth">
         <activity
+            android:name=".activities.PharmacyProductsActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.PharmacyMedicineCategoriesActivity"
             android:exported="false" />
         <activity
