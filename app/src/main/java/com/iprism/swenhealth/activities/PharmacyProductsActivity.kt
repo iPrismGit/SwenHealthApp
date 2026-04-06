@@ -1,5 +1,6 @@
 package com.iprism.swenhealth.activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -27,6 +28,20 @@ class PharmacyProductsActivity : AppCompatActivity() {
         }
         handleBack()
         setupProductsAdapter()
+        handleViewCartLo()
+        handleCartIv()
+    }
+
+    private fun handleCartIv() {
+        binding.cartIv.setOnClickListener { p0 ->
+            startActivity(Intent(this, MedicineCartActivity::class.java))
+        }
+    }
+
+    private fun handleViewCartLo() {
+        binding.viewCartLo.setOnClickListener { p0 ->
+            startActivity(Intent(this, MedicineCartActivity::class.java))
+        }
     }
 
     private fun setupProductsAdapter() {

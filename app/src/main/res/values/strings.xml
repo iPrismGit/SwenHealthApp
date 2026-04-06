@@ -19,4 +19,6 @@
     <string name="coupon_discount">Coupon Discount</string>
     <string name="consultation_fees">Consultation Fees</string>
     <string name="pay_now">Pay Now</string>
+    <string name="please_provide_a_prescription_for_the_medications_listed_above">Please provide a prescription for the medications listed above</string>
+
 </resources>
