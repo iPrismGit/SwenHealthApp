@@ -13,6 +13,7 @@ import com.iprism.swenhealth.R
 import com.iprism.swenhealth.adapters.MedicineCategoriesAdapter
 import com.iprism.swenhealth.databinding.ActivityPharmacyMedicineCategoriesBinding
 import com.iprism.swenhealth.interfaces.OnServiceItemClickListener
+import com.iprism.swenhealth.utils.ToastUtils
 
 class PharmacyMedicineCategoriesActivity : AppCompatActivity() {
 
@@ -31,6 +32,27 @@ class PharmacyMedicineCategoriesActivity : AppCompatActivity() {
         handleBack()
         setupAdapter()
         handleBookMedicineBtn()
+        handlePrescriptionLo()
+        handleCallLo()
+        handleWhatsappLo()
+    }
+
+    private fun handleWhatsappLo() {
+        binding.whatsappLo.setOnClickListener { p0 ->
+            ToastUtils.showSuccessCustomToast(this, "Whatsapp Button Clicked")
+        }
+    }
+
+    private fun handleCallLo() {
+        binding.callLo.setOnClickListener { p0 ->
+            ToastUtils.showSuccessCustomToast(this, "Call Now Button Clicked")
+        }
+    }
+
+    private fun handlePrescriptionLo() {
+        binding.prescriptionLo.setOnClickListener { p0 ->
+            startActivity(Intent(this, MedicinePrescriptionBookingActivity::class.java))
+        }
     }
 
     private fun handleBookMedicineBtn() {

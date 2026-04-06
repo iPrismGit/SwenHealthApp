@@ -6,7 +6,7 @@
     android:background="@color/primary_light_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.DignosticPrescriptionBookingActivity">
+    tools:context=".activities.MedicinePrescriptionBookingActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout6"
@@ -73,12 +73,12 @@
                 android:text="Please upload images of valid prescription from your\n
 doctor."
                 android:textSize="14dp"/>
-            
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                
+
                 <LinearLayout
                     android:id="@+id/camera_lo"
                     android:layout_width="wrap_content"
@@ -86,7 +86,7 @@ doctor."
                     android:padding="8dp"
                     android:gravity="center"
                     android:orientation="vertical">
-                    
+
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
@@ -99,7 +99,7 @@ doctor."
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/lato_light"
                         android:text="Camera"/>
-                    
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -147,7 +147,7 @@ doctor."
                         android:text="PDF"/>
 
                 </LinearLayout>
-                
+
             </LinearLayout>
 
             <LinearLayout
@@ -218,6 +218,5 @@ doctor."
         </LinearLayout>
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
