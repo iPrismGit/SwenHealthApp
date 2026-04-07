@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SwenHealth">
         <activity
+            android:name=".activities.HospitalDoctorsActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.MedicinePrescriptionSummeryActivity"
             android:exported="false" />
         <activity

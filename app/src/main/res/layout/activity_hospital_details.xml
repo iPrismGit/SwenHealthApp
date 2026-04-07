@@ -603,7 +603,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/inter_semibold"
             android:padding="10dp"
-            android:text="Admit"
+            android:text="Continue Booking"
             android:textAllCaps="false"
             android:visibility="gone"
             app:cornerRadius="8dp" />

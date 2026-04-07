@@ -1,5 +1,6 @@
 package com.iprism.swenhealth.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
@@ -46,6 +47,20 @@ class HospitalDetailsActivity : AppCompatActivity() {
         setupDiagnosticPackagesAdapter()
         setupHospitalSpecialitiesAdapter()
         setupPharmacyCategoriesAdapter()
+        handleContinueBookingBtn()
+        handleAdmitBtn()
+    }
+
+    private fun handleAdmitBtn() {
+        binding.admitBtn.setOnClickListener { p0 ->
+          //  startActivity(Intent(this, OnlineDoctorProfileActivity::class.java))
+        }
+    }
+
+    private fun handleContinueBookingBtn() {
+        binding.continueBookingBtn.setOnClickListener { p0 ->
+            startActivity(Intent(this, HospitalDoctorsActivity::class.java))
+        }
     }
 
     private fun setupPharmacyCategoriesAdapter() {
