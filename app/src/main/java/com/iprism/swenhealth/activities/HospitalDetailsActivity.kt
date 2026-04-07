@@ -1,8 +1,12 @@
 package com.iprism.swenhealth.activities
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -11,12 +15,15 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.iprism.swenhealth.R
 import com.iprism.swenhealth.adapters.CategoriesAdapter
 import com.iprism.swenhealth.adapters.DiagnosticPackagesAdapter
 import com.iprism.swenhealth.adapters.MedicineCategoriesAdapter
 import com.iprism.swenhealth.adapters.OnlineDoctorCategoriesAdapter
 import com.iprism.swenhealth.databinding.ActivityHospitalDetailsBinding
+import com.iprism.swenhealth.databinding.BookAmbulanceBottomSheetBinding
+import com.iprism.swenhealth.databinding.LabTestBillDetailsBottomSheetBinding
 import com.iprism.swenhealth.interfaces.OnPackageClickListener
 
 class HospitalDetailsActivity : AppCompatActivity() {
@@ -55,6 +62,26 @@ class HospitalDetailsActivity : AppCompatActivity() {
         binding.admitBtn.setOnClickListener { p0 ->
           //  startActivity(Intent(this, OnlineDoctorProfileActivity::class.java))
         }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun showAmbulanceBooking(context: Context) {
+        val bottomSheetDialog = BottomSheetDialog(context)
+        val ambulanceBookingBottomSheetBinding = BookAmbulanceBottomSheetBinding.inflate(
+            LayoutInflater.from(context))
+        bottomSheetDialog.setContentView(ambulanceBookingBottomSheetBinding.root)
+        bottomSheetDialog.setOnShowListener { dialog -> val bottomSheet = (dialog as BottomSheetDialog).findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
+            bottomSheet?.setBackgroundResource(R.drawable.top_edges_bg)
+        }
+        ambulanceBookingBottomSheetBinding.crossImg.setOnClickListener(View.OnClickListener {
+            bottomSheetDialog.cancel()
+        })
+
+        ambulanceBookingBottomSheetBinding.bookNowBtn.setOnClickListener { p0 ->
+
+        }
+
+        bottomSheetDialog.show()
     }
 
     private fun handleContinueBookingBtn() {
