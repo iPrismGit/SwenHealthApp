@@ -75,6 +75,11 @@ class HospitalDetailsActivity : AppCompatActivity() {
         }
         ambulanceBookingBottomSheetBinding.crossImg.setOnClickListener(View.OnClickListener {
             bottomSheetDialog.cancel()
+            bottomSheetDialog.cancel()
+            val intent = Intent(this, HospitalTimeSlotsActivity::class.java)
+            intent.putExtra("hospitalId", "hospitalId")
+            intent.putExtra("catId", "catId")
+            startActivity(intent)
         })
 
         ambulanceBookingBottomSheetBinding.bookNowBtn.setOnClickListener { p0 ->
