@@ -4,8 +4,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.iprism.swenhealth.databinding.HospitalItemBinding
+import com.iprism.swenhealth.interfaces.OnHospitalClickListener
 
 class HospitalsAdapter () : RecyclerView.Adapter<RecyclerView.ViewHolder> () {
+
+    private lateinit var listener: OnHospitalClickListener
+
+    fun setupListener(listener: OnHospitalClickListener) {
+        this.listener = listener
+    }
 
     override fun onCreateViewHolder(
         p0: ViewGroup,
@@ -21,7 +28,9 @@ class HospitalsAdapter () : RecyclerView.Adapter<RecyclerView.ViewHolder> () {
     ) {
         val holder = p0 as HospitalViewHolder
         holder.binding.apply {
-
+            root.setOnClickListener { p0 ->
+                listener.onItemClick(p1)
+            }
         }
     }
 

@@ -1,12 +1,22 @@
 package com.iprism.swenhealth.activities
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.iprism.swenhealth.R
+import com.iprism.swenhealth.adapters.CategoriesAdapter
+import com.iprism.swenhealth.adapters.DiagnosticPackagesAdapter
+import com.iprism.swenhealth.adapters.MedicineCategoriesAdapter
+import com.iprism.swenhealth.adapters.OnlineDoctorCategoriesAdapter
 import com.iprism.swenhealth.databinding.ActivityHospitalDetailsBinding
+import com.iprism.swenhealth.interfaces.OnPackageClickListener
 
 class HospitalDetailsActivity : AppCompatActivity() {
 
@@ -22,6 +32,108 @@ class HospitalDetailsActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
+        setupBtnsStyling(binding.hospitalBookingBtn, binding.medicinesBtn, binding.diagnosticsBtn)
+        binding.hospitalSpecialitiesLo.visibility = android.view.View.VISIBLE
+        binding.admitBtn.visibility = android.view.View.VISIBLE
+        binding.continueBookingBtn.visibility = android.view.View.VISIBLE
+        binding.bookMedicineBtn.visibility = android.view.View.GONE
+        binding.diagnosticContinueLo.visibility = android.view.View.GONE
+        binding.diagnosticLo.visibility = android.view.View.GONE
+        handleHospitalBookingBtn()
+        handleMedicineBtn()
+        handleDiagnosticBtn()
+        handleBack()
+        setupDiagnosticPackagesAdapter()
+        setupHospitalSpecialitiesAdapter()
+        setupPharmacyCategoriesAdapter()
     }
+
+    private fun setupPharmacyCategoriesAdapter() {
+        val adapter = MedicineCategoriesAdapter()
+        val linearLayoutManager = GridLayoutManager(this, 4)
+        binding.medicineCategoriesRv.adapter = adapter
+        binding.medicineCategoriesRv.layoutManager = linearLayoutManager
+    }
+
+    private fun setupHospitalSpecialitiesAdapter() {
+        val adapter = OnlineDoctorCategoriesAdapter()
+        val linearLayoutManager = GridLayoutManager(this, 4)
+        binding.specialitiesRv.adapter = adapter
+        binding.specialitiesRv.layoutManager = linearLayoutManager
+    }
+
+    private fun setupDiagnosticPackagesAdapter() {
+        val adapter = DiagnosticPackagesAdapter()
+        val linearLayoutManager = LinearLayoutManager(this)
+        binding.diagnosticPackagesRv.adapter = adapter
+        binding.diagnosticPackagesRv.layoutManager = linearLayoutManager
+        adapter.setupListener(object : OnPackageClickListener{
+            override fun onIncludedTestsClickListener(position: Int) {
+                Log.d("TAG", "onIncludedTestsClickListener: $position")
+            }
+
+        })
+    }
+
+    private fun handleBack() {
+        binding.backImg.setOnClickListener { v ->
+            finish()
+        }
+    }
+
+    private fun handleDiagnosticBtn() {
+        binding.diagnosticsBtn.setOnClickListener { p0 ->
+            setupBtnsStyling(binding.diagnosticsBtn, binding.hospitalBookingBtn, binding.medicinesBtn)
+            binding.diagnosticLo.visibility = android.view.View.VISIBLE
+            binding.diagnosticContinueLo.visibility = android.view.View.VISIBLE
+            binding.pharmacyLo.visibility = android.view.View.GONE
+            binding.continueBookingBtn.visibility = android.view.View.GONE
+            binding.admitBtn.visibility = android.view.View.GONE
+            binding.bookMedicineBtn.visibility = android.view.View.GONE
+            binding.hospitalSpecialitiesLo.visibility = android.view.View.GONE
+
+        }
+    }
+
+    private fun handleMedicineBtn() {
+        binding.medicinesBtn.setOnClickListener { p0 ->
+            setupBtnsStyling(binding.medicinesBtn, binding.hospitalBookingBtn, binding.diagnosticsBtn)
+            binding.pharmacyLo.visibility = android.view.View.VISIBLE
+            binding.bookMedicineBtn.visibility = android.view.View.VISIBLE
+            binding.diagnosticLo.visibility = android.view.View.GONE
+            binding.continueBookingBtn.visibility = android.view.View.GONE
+            binding.admitBtn.visibility = android.view.View.GONE
+            binding.hospitalSpecialitiesLo.visibility = android.view.View.GONE
+            binding.diagnosticContinueLo.visibility = android.view.View.GONE
+        }
+    }
+
+    private fun handleHospitalBookingBtn() {
+        binding.hospitalBookingBtn.setOnClickListener { p0 ->
+            setupBtnsStyling(binding.hospitalBookingBtn, binding.medicinesBtn, binding.diagnosticsBtn)
+            binding.hospitalSpecialitiesLo.visibility = android.view.View.VISIBLE
+            binding.admitBtn.visibility = android.view.View.VISIBLE
+            binding.continueBookingBtn.visibility = android.view.View.VISIBLE
+            binding.pharmacyLo.visibility = android.view.View.GONE
+            binding.bookMedicineBtn.visibility = android.view.View.GONE
+            binding.diagnosticContinueLo.visibility = android.view.View.GONE
+            binding.diagnosticLo.visibility = android.view.View.GONE
+        }
+    }
+
+    private fun setupBtnsStyling(
+        textView: TextView,
+        textView1: TextView,
+        textView2: TextView
+    ) {
+        textView.setBackgroundColor(ContextCompat.getColor(this, R.color.primary_light_color))
+        textView.setTextColor(ContextCompat.getColor(this, R.color.app_primary_color))
+
+        textView1.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
+        textView1.setTextColor(ContextCompat.getColor(this, R.color.black))
+
+        textView2.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
+        textView2.setTextColor(ContextCompat.getColor(this, R.color.black))
+    }
+
 }
