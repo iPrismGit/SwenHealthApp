@@ -60,12 +60,12 @@ class HospitalDetailsActivity : AppCompatActivity() {
 
     private fun handleAdmitBtn() {
         binding.admitBtn.setOnClickListener { p0 ->
-          //  startActivity(Intent(this, OnlineDoctorProfileActivity::class.java))
+          showAmbulanceBookingBottomSheet(this)
         }
     }
 
     @SuppressLint("SetTextI18n")
-    private fun showAmbulanceBooking(context: Context) {
+    private fun showAmbulanceBookingBottomSheet(context: Context) {
         val bottomSheetDialog = BottomSheetDialog(context)
         val ambulanceBookingBottomSheetBinding = BookAmbulanceBottomSheetBinding.inflate(
             LayoutInflater.from(context))
@@ -78,7 +78,7 @@ class HospitalDetailsActivity : AppCompatActivity() {
         })
 
         ambulanceBookingBottomSheetBinding.bookNowBtn.setOnClickListener { p0 ->
-
+            startActivity(Intent(this, AmbulanceBookingSummeryActivity::class.java))
         }
 
         bottomSheetDialog.show()

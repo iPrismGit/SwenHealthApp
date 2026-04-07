@@ -4,7 +4,11 @@
     <string name="book_an_ambulance_description">“Book an ambulance with ease, anytime you need urgent \nmedical help. Fast response and reliable \nservice at your doorstep.”</string>
     <string name="dummy_description">"Apollo Hospital offers world-class healthcare services with a team of highly skilled doctors and state-of-the-art facilities. From general medicine to specialized treatments, you can trust us for comprehensive care. Our hospital is committed to providing affordable, quality medical services. With our health card, enjoy exclusive discounts on consultations, diagnostics, and more."</string>
     <string name="terms_and_conditions"><![CDATA[Terms & Conditions]]></string>
-
+    <string name="patient_contact_number">Patient’s Contact Number</string>
+    <string name="you_will_receive_call">You will receive the call on this number</string>
+    <string name="patient_name">Patient Name</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="confirm_booking">Confirm Booking</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tests_text"><u>Includes 82 tests</u></string>
     <string name="name">Name<font fgcolor='#FF0000'>*</font></string>
