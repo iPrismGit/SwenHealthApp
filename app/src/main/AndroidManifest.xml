@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SwenHealth">
         <activity
+            android:name=".activities.AddAdmitPatientActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.HospitalTimeSlotsActivity"
             android:exported="false" />
         <activity
