@@ -39,4 +39,5 @@ class LocationPermissionsActivity : AppCompatActivity() {
             finish()
         }
     }
+
 }

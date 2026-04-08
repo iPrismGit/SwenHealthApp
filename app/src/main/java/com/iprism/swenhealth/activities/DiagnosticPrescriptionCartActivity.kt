@@ -39,4 +39,5 @@ class DiagnosticPrescriptionCartActivity : AppCompatActivity() {
             finish()
         }
     }
+
 }
