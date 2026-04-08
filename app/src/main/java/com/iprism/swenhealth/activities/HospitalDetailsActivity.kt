@@ -25,6 +25,8 @@ import com.iprism.swenhealth.databinding.ActivityHospitalDetailsBinding
 import com.iprism.swenhealth.databinding.BookAmbulanceBottomSheetBinding
 import com.iprism.swenhealth.databinding.LabTestBillDetailsBottomSheetBinding
 import com.iprism.swenhealth.interfaces.OnPackageClickListener
+import com.iprism.swenhealth.interfaces.OnServiceItemClickListener
+import com.iprism.swenhealth.utils.ToastUtils
 
 class HospitalDetailsActivity : AppCompatActivity() {
 
@@ -55,7 +57,56 @@ class HospitalDetailsActivity : AppCompatActivity() {
         setupHospitalSpecialitiesAdapter()
         setupPharmacyCategoriesAdapter()
         handleContinueBookingBtn()
+        handleBookMedicineBtn()
         handleAdmitBtn()
+        handleContinueBtn()
+        handleDiagnosticWhatsappLo()
+        handleDiagnosticPrescriptionLo()
+        handeMedicinePrescriptionLo()
+        handleMedicineCallLo()
+        handleMedicineWhatsappLo()
+    }
+
+    private fun handleMedicineWhatsappLo() {
+        binding.medicineWhatsappLo.setOnClickListener { p0 ->
+            ToastUtils.showSuccessCustomToast(this, "Navigate to Whatsapp..!")
+        }
+    }
+
+    private fun handleMedicineCallLo() {
+        binding.medicineCallLo.setOnClickListener { p0 ->
+            ToastUtils.showSuccessCustomToast(this, "Clicked On Call..!")
+        }
+    }
+
+    private fun handeMedicinePrescriptionLo() {
+        binding.medicinePrescriptionLo.setOnClickListener { p0 ->
+            startActivity(Intent(this, MedicinePrescriptionBookingActivity::class.java))
+        }
+    }
+
+    private fun handleDiagnosticWhatsappLo() {
+        binding.whatsappLo.setOnClickListener { p0 ->
+            ToastUtils.showSuccessCustomToast(this, "Navigate to Whatsapp..!")
+        }
+    }
+
+    private fun handleDiagnosticPrescriptionLo() {
+        binding.prescriptionLo.setOnClickListener { p0 ->
+            startActivity(Intent(this, DignosticPrescriptionBookingActivity::class.java))
+        }
+    }
+
+    private fun handleContinueBtn() {
+        binding.continueBtn.setOnClickListener { p0 ->
+            startActivity(Intent(this, DiagnosticSummeryActivity::class.java))
+        }
+    }
+
+    private fun handleBookMedicineBtn() {
+        binding.bookMedicineBtn.setOnClickListener { p0 ->
+            startActivity(Intent(this, PharmacyMedicineCategoriesActivity::class.java))
+        }
     }
 
     private fun handleAdmitBtn() {
@@ -100,6 +151,12 @@ class HospitalDetailsActivity : AppCompatActivity() {
         val linearLayoutManager = GridLayoutManager(this, 4)
         binding.medicineCategoriesRv.adapter = adapter
         binding.medicineCategoriesRv.layoutManager = linearLayoutManager
+        adapter.setupListener(object : OnServiceItemClickListener{
+            override fun onItemClick(position: Int) {
+                Log.d("TAG", "onItemClick: $position")
+            }
+
+        })
     }
 
     private fun setupHospitalSpecialitiesAdapter() {

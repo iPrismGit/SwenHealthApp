@@ -35,7 +35,21 @@ class HomeFragment : Fragment() {
         setupHealthEducationCategoriesRecyclerView()
         handleRedeemCouponsLo()
         handleOnlineDoctorLo()
+        handleBookAmbulance()
+        handleHospitalAdmission()
         return binding.root
+    }
+
+    private fun handleHospitalAdmission() {
+        binding.referAnAdmissionLo.setOnClickListener { p0 ->
+            (activity as? MainActivity)?.changeFragment(1)
+        }
+    }
+
+    private fun handleBookAmbulance() {
+        binding.requestAmbulanceLo.setOnClickListener { p0 ->
+            (activity as? MainActivity)?.changeFragment(1)
+        }
     }
 
     private fun handleOnlineDoctorLo() {
