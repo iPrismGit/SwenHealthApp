@@ -5,8 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1F8FF"
-    tools:context=".activities.HospitalDoctorsActivity">
+    android:background="@color/primary_light_color"
+    tools:context=".activities.OfferHospitalsActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -33,7 +33,7 @@
             android:layout_marginStart="6dp"
             android:layout_weight="1"
             android:fontFamily="@font/lato_bold"
-            android:text="General Physician"
+            android:text="Offers"
             android:textColor="@color/black"
             android:textSize="18dp" />
 
@@ -48,8 +48,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" >
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/edit_text_bg"
+            android:padding="8dp"
+            android:gravity="center"
+            android:layout_margin="16dp">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                app:tint="@color/gray"
+                android:src="@drawable/search__icon" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:layout_marginStart="8dp"
+                android:hint="Search"
+                android:textColorHint="@color/gray"
+                android:background="@android:color/transparent"/>
+
+        </LinearLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/doctors_rv"
+            android:padding="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>

@@ -31,6 +31,7 @@ import com.iprism.swenhealth.utils.ToastUtils
 class HospitalDetailsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHospitalDetailsBinding
+    private var tag = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +42,12 @@ class HospitalDetailsActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        tag = intent.getStringExtra("Tag").toString()
+        if (tag.equals("Hospital", true)){
+            binding.offerTxt.visibility = View.GONE
+        } else{
+            binding.offerTxt.visibility = View.VISIBLE
         }
         setupBtnsStyling(binding.hospitalBookingBtn, binding.medicinesBtn, binding.diagnosticsBtn)
         binding.hospitalSpecialitiesLo.visibility = android.view.View.VISIBLE

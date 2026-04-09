@@ -34,7 +34,9 @@ class HospitalsFragment : Fragment() {
         binding.hospitalsRv.adapter = adapter
         adapter.setupListener(object : OnHospitalClickListener{
             override fun onItemClick(position: Int) {
-                startActivity(Intent(requireContext(), HospitalDetailsActivity::class.java))
+                val intent = Intent(requireContext(), HospitalDetailsActivity::class.java)
+                intent.putExtra("Tag", "Hospital")
+                startActivity(intent)
             }
 
         })

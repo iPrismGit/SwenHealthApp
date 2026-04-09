@@ -68,6 +68,10 @@ class MainActivity : AppCompatActivity() {
             decorView.setPadding(0, getStatusBarHeight(), 0, 0)
         }
 
+        bottomSheetBinding.offersLl.setOnClickListener { p0 ->
+            startActivity(Intent(this, OfferHospitalsActivity::class.java))
+        }
+
         bottomSheetBinding.medlockerLl.setOnClickListener { p0 ->
             startActivity(Intent(this, MedLockerActivity::class.java))
         }
