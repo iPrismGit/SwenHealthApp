@@ -37,7 +37,14 @@ class HomeFragment : Fragment() {
         handleOnlineDoctorLo()
         handleBookAmbulance()
         handleHospitalAdmission()
+        handleMenuImg()
         return binding.root
+    }
+
+    private fun handleMenuImg() {
+        binding.menuImg.setOnClickListener { p0 ->
+            (activity as? MainActivity)?.showMenuBottomSheet()
+        }
     }
 
     private fun handleHospitalAdmission() {

@@ -1,18 +1,28 @@
 package com.iprism.swenhealth.activities
 
 import android.annotation.SuppressLint
+import android.app.Dialog
+import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.View
+import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar
 import com.iprism.swenhealth.R
 import com.iprism.swenhealth.adapters.HomePagerAdapter
 import com.iprism.swenhealth.databinding.ActivityMainBinding
+import com.iprism.swenhealth.databinding.LogOutDialogBinding
+import com.iprism.swenhealth.databinding.MenuBottomSheetBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,6 +38,85 @@ class MainActivity : AppCompatActivity() {
         fragment = intent.getStringExtra("fragment").toString()
         setupViewPager()
         setupFragmentLoading()
+    }
+
+    fun showMenuBottomSheet() {
+        val bottomSheetDialog = BottomSheetDialog(this, R.style.FullScreenBottomSheetDialog)
+
+        val bottomSheetBinding = MenuBottomSheetBinding.inflate(layoutInflater)
+        bottomSheetDialog.setContentView(bottomSheetBinding.root)
+
+        bottomSheetBinding.crossIv.setOnClickListener {
+            bottomSheetDialog.dismiss()
+        }
+
+        val bottomSheet = bottomSheetDialog.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
+        bottomSheet?.setBackgroundColor(Color.TRANSPARENT)
+
+        bottomSheet?.let {
+            val behavior = BottomSheetBehavior.from(it)
+            it.layoutParams.height = ViewGroup.LayoutParams.MATCH_PARENT
+            behavior.state = BottomSheetBehavior.STATE_EXPANDED
+        }
+
+        bottomSheetDialog.window?.apply {
+            setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+            setFlags(
+                WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS,
+                WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS
+            )
+            decorView.setPadding(0, getStatusBarHeight(), 0, 0)
+        }
+
+        bottomSheetBinding.contactUsLl.setOnClickListener(View.OnClickListener {
+           // startActivity(Intent(this, ContactUsActivity::class.java))
+        })
+
+        bottomSheetBinding!!.aboutUsLl.setOnClickListener(View.OnClickListener {
+            startActivity(Intent(this, AboutUsActivity::class.java))
+        })
+
+        bottomSheetBinding!!.upArrowImg.setOnClickListener(View.OnClickListener {
+            bottomSheetBinding!!.hospitalBookingsDetailsLl.visibility = View.GONE
+            bottomSheetBinding!!.upArrowImg.visibility = View.GONE
+            bottomSheetBinding!!.downArrowImg.visibility = View.VISIBLE
+        })
+
+        bottomSheetBinding!!.downArrowImg.setOnClickListener(View.OnClickListener {
+            bottomSheetBinding!!.hospitalBookingsDetailsLl.visibility = View.VISIBLE
+            bottomSheetBinding!!.upArrowImg.visibility = View.VISIBLE
+            bottomSheetBinding!!.downArrowImg.visibility = View.GONE
+        })
+
+        bottomSheetBinding!!.logoutLl.setOnClickListener(View.OnClickListener {
+            showLogOutDialog()
+        })
+
+        bottomSheetDialog.show()
+    }
+
+    fun showLogOutDialog() {
+        val dialog = Dialog(this)
+        val logoutBinding = LogOutDialogBinding.inflate(layoutInflater)
+        dialog.setContentView(logoutBinding.root)
+        dialog.window?.setBackgroundDrawableResource(R.drawable.edit_text_bg)
+        logoutBinding.yesBtn.setOnClickListener(View.OnClickListener {
+         //   user?.logoutUser()
+            startActivity(Intent(this, LoginActivity::class.java))
+            dialog.dismiss()
+
+        })
+
+        logoutBinding.noBtn.setOnClickListener(View.OnClickListener {
+            dialog.dismiss()
+        })
+
+        dialog.show()
+    }
+
+    fun getStatusBarHeight(): Int {
+        val resourceId = resources.getIdentifier("status_bar_height", "dimen", "android")
+        return if (resourceId > 0) resources.getDimensionPixelSize(resourceId) else 0
     }
 
     private fun setupFragmentLoading() {

@@ -96,7 +96,8 @@
                         android:background="@color/white"
                         android:gravity="center"
                         android:orientation="horizontal"
-                        android:padding="10dp">
+                        android:paddingVertical="10dp"
+                        android:paddingHorizontal="16dp">
 
                         <ImageView
                             android:layout_width="20dp"
@@ -113,16 +114,17 @@
 
                         <ImageView
                             android:id="@+id/down_arrow_img"
-                            android:layout_width="18dp"
+                            android:layout_width="32dp"
                             android:layout_height="32dp"
+                            android:paddingHorizontal="8dp"
                             android:src="@drawable/down_arrow_img" />
 
                         <ImageView
                             android:id="@+id/up_arrow_img"
                             android:visibility="gone"
-                            android:layout_width="18dp"
+                            android:layout_width="32dp"
                             android:layout_height="32dp"
-                            android:rotationX="180"
+                            android:paddingHorizontal="8dp"
                             android:src="@drawable/up_arrow" />
 
                     </LinearLayout>
@@ -409,31 +411,6 @@
                         android:layout_marginLeft="12dp"
                         android:layout_weight="1"
                         android:text="@string/med_locker"
-                        android:textColor="@color/black" />
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:id="@+id/e_card_ll"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="6dp"
-                    android:background="@color/white"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
-                        android:src="@drawable/e_card" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_weight="1"
-                        android:text="@string/e_card"
                         android:textColor="@color/black" />
                 </LinearLayout>
 
