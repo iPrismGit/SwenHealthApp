@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         bottomSheetBinding.contactUsLl.setOnClickListener(View.OnClickListener {
-           // startActivity(Intent(this, ContactUsActivity::class.java))
+            startActivity(Intent(this, ContactUsActivity::class.java))
         })
 
         bottomSheetBinding!!.aboutUsLl.setOnClickListener(View.OnClickListener {
