@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SwenHealth">
         <activity
+            android:name=".activities.ViewDocumentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AddMedLockerDocumentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.MedLockerActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.ShareAppActivity"
             android:exported="false" />
         <activity
@@ -142,7 +151,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
     </application>
 
 </manifest>
