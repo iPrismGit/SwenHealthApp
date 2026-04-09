@@ -72,6 +72,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, ContactUsActivity::class.java))
         })
 
+        bottomSheetBinding.shareappLl.setOnClickListener { p0 ->
+            startActivity(Intent(this, ShareAppActivity::class.java))
+        }
+
         bottomSheetBinding!!.aboutUsLl.setOnClickListener(View.OnClickListener {
             startActivity(Intent(this, AboutUsActivity::class.java))
         })

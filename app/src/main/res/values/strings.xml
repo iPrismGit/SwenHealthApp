@@ -318,7 +318,6 @@
     <string name="whatsapp_content">For any <b>questions or assistance</b>,\nfeel free to contact us via <b>WhatsApp</b></string>
     <string name="perscription_details">Please provide a prescription for the medications listed above <font color="#1F52A5"> (Optional)</font></string>
     <string name="provide_prescription">Please provide a prescription <font color="#1F52A5"> (Optional)</font></string>
-    <string name="share">Invite your friends to join <font color="#1F52A5">“MedRayder”</font> via link below</string>
     <string name="tests_and_instruction"><![CDATA[Tests & Instructions]]></string>
     <string name="underlined_medicines"><u>Medicines</u></string>
     <string name="underlined_timings"><u>Time</u></string>
@@ -425,5 +424,6 @@
     <string name="free">Free</string>
     <string name="enter_relationship">Enter Relationship</string>
     <string name="subscription_benefits">1. 50 lab test parameters free.\n2. One free online Doctor consultation.\n3. Free op consultation from Hospital consultation.\n4. Flat 40% discount on lab tests.\n5. Flat 30% off on radiology.\n6. Flat 15-30% discount on medical expenses.\n7. Free ambulance for 5-8km radius from hospital ambulance.\n8. Upto 20% discount on medicines.\n9. 2,00,000 accidental insurance</string>
+    <string name="share_app_link">Invite your friends to join <font color='#B12121'>“Swen Health App”</font> via link below</string>
 
 </resources>
