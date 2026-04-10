@@ -72,6 +72,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, OfferHospitalsActivity::class.java))
         }
 
+        bottomSheetBinding.diagnosticLl.setOnClickListener { p0 ->
+            startActivity(Intent(this, DiagnosticTestBookingsActivity::class.java))
+        }
+
         bottomSheetBinding.labTestLl.setOnClickListener { p0 ->
             startActivity(Intent(this, LabTestBookingsActivity::class.java))
         }
