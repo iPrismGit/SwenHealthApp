@@ -358,6 +358,7 @@ Doctor"
                             android:padding="16dp">
 
                             <LinearLayout
+                                android:id="@+id/diagnostic_test_btn"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_marginHorizontal="8dp"

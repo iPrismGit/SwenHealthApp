@@ -40,6 +40,7 @@ class HomeFragment : Fragment() {
         handleHospitalAdmission()
         handleMenuImg()
         handleNotificationImg()
+        handleBookDiagnosticTestImg()
         return binding.root
     }
 
@@ -52,6 +53,12 @@ class HomeFragment : Fragment() {
     private fun handleMenuImg() {
         binding.menuImg.setOnClickListener { p0 ->
             (activity as? MainActivity)?.showMenuBottomSheet()
+        }
+    }
+
+    private fun handleBookDiagnosticTestImg() {
+        binding.diagnosticTestBtn.setOnClickListener { p0 ->
+            (activity as? MainActivity)?.changeFragment(4)
         }
     }
 
