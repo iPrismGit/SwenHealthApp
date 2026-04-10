@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.iprism.swenhealth.R
 import com.iprism.swenhealth.activities.DoctorAppointmentCategoriesActivity
 import com.iprism.swenhealth.activities.MainActivity
+import com.iprism.swenhealth.activities.NotificationsActivity
 import com.iprism.swenhealth.activities.OnlineDoctorCategoriesActivity
 import com.iprism.swenhealth.activities.RedeemDiscountCouponsActivity
 import com.iprism.swenhealth.adapters.CategoriesAdapter
@@ -38,7 +39,14 @@ class HomeFragment : Fragment() {
         handleBookAmbulance()
         handleHospitalAdmission()
         handleMenuImg()
+        handleNotificationImg()
         return binding.root
+    }
+
+    private fun handleNotificationImg() {
+        binding.notificationImg.setOnClickListener { p0 ->
+            startActivity(Intent(requireContext(), NotificationsActivity::class.java))
+        }
     }
 
     private fun handleMenuImg() {
