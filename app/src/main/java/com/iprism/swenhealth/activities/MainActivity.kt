@@ -73,6 +73,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, OfferHospitalsActivity::class.java))
         }
 
+        bottomSheetBinding.hospitalAmbulanceBookingsLl.setOnClickListener(View.OnClickListener {
+                startActivity(Intent(this, HospitalAmbulanceBookingsActivity::class.java))
+        })
+
         bottomSheetBinding.wellnessLl.setOnClickListener { p0 ->
             val intent = Intent(this, PharmacyBookingsActivity::class.java)
             intent.putExtra("tag", "wellness")
