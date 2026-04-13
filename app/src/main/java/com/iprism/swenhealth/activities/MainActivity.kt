@@ -50,7 +50,8 @@ class MainActivity : AppCompatActivity() {
             bottomSheetDialog.dismiss()
         }
 
-        val bottomSheet = bottomSheetDialog.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
+        val bottomSheet =
+            bottomSheetDialog.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
         bottomSheet?.setBackgroundColor(Color.TRANSPARENT)
 
         bottomSheet?.let {
@@ -70,6 +71,12 @@ class MainActivity : AppCompatActivity() {
 
         bottomSheetBinding.offersLl.setOnClickListener { p0 ->
             startActivity(Intent(this, OfferHospitalsActivity::class.java))
+        }
+
+        bottomSheetBinding.wellnessLl.setOnClickListener { p0 ->
+            val intent = Intent(this, PharmacyBookingsActivity::class.java)
+            intent.putExtra("tag", "wellness")
+            startActivity(intent)
         }
 
         bottomSheetBinding.onlineDoctorsLl.setOnClickListener { p0 ->
@@ -130,7 +137,7 @@ class MainActivity : AppCompatActivity() {
         dialog.setContentView(logoutBinding.root)
         dialog.window?.setBackgroundDrawableResource(R.drawable.edit_text_bg)
         logoutBinding.yesBtn.setOnClickListener(View.OnClickListener {
-         //   user?.logoutUser()
+            //   user?.logoutUser()
             startActivity(Intent(this, LoginActivity::class.java))
             dialog.dismiss()
 
