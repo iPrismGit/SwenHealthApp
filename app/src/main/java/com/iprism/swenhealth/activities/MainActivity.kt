@@ -72,6 +72,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, OfferHospitalsActivity::class.java))
         }
 
+        bottomSheetBinding.onlineDoctorsLl.setOnClickListener { p0 ->
+            startActivity(Intent(this, OnlineDoctorBookingsActivity::class.java))
+        }
+
+
         bottomSheetBinding.yourAddressLl.setOnClickListener { p0 ->
             startActivity(Intent(this, AddressListActivity::class.java))
         }

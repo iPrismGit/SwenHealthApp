@@ -1,0 +1,22 @@
+package com.iprism.swenhealth.adapters
+
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.iprism.swenhealth.fragments.OnlineDoctorCompletedBookingsFragment
+import com.iprism.swenhealth.fragments.OnlineDoctorOngoingBookingsFragment
+
+class OnlineDoctorBookingsPagerAdapter (activity: AppCompatActivity) : FragmentStateAdapter(activity) {
+
+    override fun getItemCount(): Int = 2
+
+    override fun createFragment(position: Int): Fragment {
+
+        return when (position) {
+            0 -> OnlineDoctorOngoingBookingsFragment()
+            1 -> OnlineDoctorCompletedBookingsFragment()
+            else -> OnlineDoctorOngoingBookingsFragment()
+        }
+    }
+
+}

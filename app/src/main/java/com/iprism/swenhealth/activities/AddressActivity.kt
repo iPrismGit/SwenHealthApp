@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.iprism.swenhealth.R
 import com.iprism.swenhealth.databinding.ActivityAddressBinding
+import com.iprism.swenhealth.utils.ToastUtils
 
 class AddressActivity : AppCompatActivity() {
 
@@ -22,6 +23,21 @@ class AddressActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
+        handleBack()
+        handleConfirmBtn()
     }
+
+    private fun handleConfirmBtn() {
+        binding.confirmBtn.setOnClickListener {
+            ToastUtils.showSuccessCustomToast(this, "Address Added Successfully..!")
+            finish()
+        }
+    }
+
+    private fun handleBack() {
+        binding.backImg.setOnClickListener { p0 ->
+            finish()
+        }
+    }
+
 }
