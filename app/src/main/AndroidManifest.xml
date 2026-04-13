@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SwenHealth">
         <activity
+            android:name=".activities.HospitalAdmissionBookingDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.HospitalAdmissionBookingsActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.HospitalAmbulanceBookingDetailsActivity"
             android:exported="false" />
         <activity

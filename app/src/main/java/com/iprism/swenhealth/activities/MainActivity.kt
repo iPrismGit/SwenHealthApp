@@ -20,6 +20,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar
 import com.iprism.swenhealth.R
 import com.iprism.swenhealth.adapters.HomePagerAdapter
+import com.iprism.swenhealth.adapters.MedicineBookedAdapter
 import com.iprism.swenhealth.databinding.ActivityMainBinding
 import com.iprism.swenhealth.databinding.LogOutDialogBinding
 import com.iprism.swenhealth.databinding.MenuBottomSheetBinding
@@ -73,6 +74,31 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, OfferHospitalsActivity::class.java))
         }
 
+        bottomSheetBinding.hospitalMedicineBookingsLl.setOnClickListener(View.OnClickListener {
+            startActivity(
+                    Intent(
+                        this,
+                        PharmacyBookingsActivity::class.java
+                    )
+                )
+        })
+
+        bottomSheetBinding.hospitalAdmissionBookingsLl.setOnClickListener(View.OnClickListener {
+            val intent = Intent(this, HospitalAdmissionBookingsActivity::class.java)
+            startActivity(intent)
+        })
+
+        bottomSheetBinding.hospitalDoctorBookingsLl.setOnClickListener(View.OnClickListener {
+            val intent = Intent(this, OnlineDoctorBookingsActivity::class.java)
+            intent.putExtra("tag", "hospitalDoctor")
+            startActivity(intent)
+        })
+
+        bottomSheetBinding.hospitalDiagnosticBookingsLl.setOnClickListener(View.OnClickListener {
+            startActivity(Intent(this, DiagnosticTestBookingsActivity::class.java))
+        })
+
+
         bottomSheetBinding.hospitalAmbulanceBookingsLl.setOnClickListener(View.OnClickListener {
                 startActivity(Intent(this, HospitalAmbulanceBookingsActivity::class.java))
         })
@@ -84,7 +110,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         bottomSheetBinding.onlineDoctorsLl.setOnClickListener { p0 ->
-            startActivity(Intent(this, OnlineDoctorBookingsActivity::class.java))
+            val intent = Intent(this, OnlineDoctorBookingsActivity::class.java)
+            intent.putExtra("tag", "onlineDoctor")
+            startActivity(intent)
         }
 
 
