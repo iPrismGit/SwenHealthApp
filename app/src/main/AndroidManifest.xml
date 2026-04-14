@@ -15,9 +15,6 @@
             android:name=".activities.TestimonialVideosActivity"
             android:exported="false" />
         <activity
-            android:name=".adapters.HealthMediaAdapter"
-            android:exported="false" />
-        <activity
             android:name=".activities.HealthMediaActivity"
             android:exported="false" />
         <activity
