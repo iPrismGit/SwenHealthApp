@@ -224,7 +224,7 @@ Admission"
                                 </LinearLayout>
 
                                 <LinearLayout
-                                    android:id="@+id/reffer_a_diagnostic_lo"
+                                    android:id="@+id/health_ins_admissions_lo"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_marginStart="6dp"
@@ -433,6 +433,7 @@ Diagnostic Test"
                             </LinearLayout>
 
                             <LinearLayout
+                                android:id="@+id/free_video_con_lo"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_marginHorizontal="8dp"
@@ -519,7 +520,6 @@ Consultation"
                             android:background="@drawable/banner_img"/>
                     </LinearLayout>
 
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -604,11 +604,166 @@ Consultation"
                             android:textSize="16dp"
                             android:textColor="@color/black" />
 
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/health_education_categories_rv"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp" />
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginHorizontal="8dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/symptom_checker_lo"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginHorizontal="8dp"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="80dp"
+                                    app:cardCornerRadius="8dp"
+                                    app:cardBackgroundColor="@color/white"
+                                    app:strokeColor="@color/gray"
+                                    app:strokeWidth="0.5dp">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="centerCrop"
+                                        android:padding="12dp"
+                                        android:src="@drawable/syptom_checker_img" />
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:fontFamily="@font/lato"
+                                    android:gravity="center"
+                                    android:text="Symptom
+Checker"
+                                    android:textColor="@color/black"
+                                    android:textSize="12dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/diet_tips_lo"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginHorizontal="8dp"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="80dp"
+                                    app:cardCornerRadius="8dp"
+                                    app:cardBackgroundColor="@color/white"
+                                    app:strokeColor="@color/gray"
+                                    app:strokeWidth="0.5dp">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:adjustViewBounds="true"
+                                        android:padding="12dp"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/diet_tips_img" />
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:fontFamily="@font/lato"
+                                    android:gravity="center"
+                                    android:text="Diet Tips"
+                                    android:textColor="@color/black"
+                                    android:textSize="12dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/health_talks_lo"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="8dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="80dp"
+                                    app:cardCornerRadius="8dp"
+                                    app:cardBackgroundColor="@color/white"
+                                    app:strokeColor="@color/gray"
+                                    app:strokeWidth="0.5dp">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="centerCrop"
+                                        android:padding="12dp"
+                                        android:src="@drawable/health_talks_img" />
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:fontFamily="@font/lato"
+                                    android:gravity="center"
+                                    android:text="Health Talks"
+                                    android:textColor="@color/black"
+                                    android:textSize="12dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/health_media_lo"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="8dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="80dp"
+                                    app:cardCornerRadius="8dp"
+                                    app:cardBackgroundColor="@color/white"
+                                    app:strokeColor="@color/gray"
+                                    app:strokeWidth="0.5dp">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:adjustViewBounds="true"
+                                        android:padding="12dp"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/see_all_services_img" />
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:fontFamily="@font/lato"
+                                    android:gravity="center"
+                                    android:text="Health Media"
+                                    android:textColor="@color/black"
+                                    android:textSize="12dp" />
+
+                            </LinearLayout>
+                        </LinearLayout>
 
                     </LinearLayout>
 

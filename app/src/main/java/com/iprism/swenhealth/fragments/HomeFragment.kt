@@ -10,16 +10,19 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iprism.swenhealth.R
 import com.iprism.swenhealth.activities.DoctorAppointmentCategoriesActivity
+import com.iprism.swenhealth.activities.HealthMediaActivity
 import com.iprism.swenhealth.activities.HospitalDoctorsActivity
 import com.iprism.swenhealth.activities.MainActivity
 import com.iprism.swenhealth.activities.NotificationsActivity
 import com.iprism.swenhealth.activities.OnlineDoctorCategoriesActivity
 import com.iprism.swenhealth.activities.RedeemDiscountCouponsActivity
 import com.iprism.swenhealth.activities.SymptomCategoriesActivity
+import com.iprism.swenhealth.activities.TestimonialVideosActivity
 import com.iprism.swenhealth.adapters.CategoriesAdapter
 import com.iprism.swenhealth.databinding.FragmentHomeBinding
 import com.iprism.swenhealth.databinding.FragmentMedicinesBinding
 import com.iprism.swenhealth.interfaces.OnServiceItemClickListener
+import com.iprism.swenhealth.utils.ToastUtils
 
 class HomeFragment : Fragment() {
 
@@ -35,7 +38,6 @@ class HomeFragment : Fragment() {
         setupSurgeonSymptomsRecyclerView()
         setupQuotesRecyclerView()
         setupHomeVisitServicesRecyclerView()
-        setupHealthEducationCategoriesRecyclerView()
         handleRedeemCouponsLo()
         handleOnlineDoctorLo()
         handleBookAmbulance()
@@ -43,7 +45,56 @@ class HomeFragment : Fragment() {
         handleMenuImg()
         handleNotificationImg()
         handleBookDiagnosticTestImg()
+        handleHealthMediaLo()
+        handleHealthTalksLo()
+        handleDietTipsLo()
+        handleSymptomCheckerLo()
+        handleWhatsappAssistanceLo()
+        handleHealthInsAdmissionLo()
+        handleFreeVideoConsultationLo()
         return binding.root
+    }
+
+    private fun handleFreeVideoConsultationLo() {
+        binding.freeVideoConLo.setOnClickListener { p0 ->
+            ToastUtils.showErrorCustomToast(requireContext(), "No Screens..!")
+        }
+    }
+
+    private fun handleHealthInsAdmissionLo() {
+        binding.healthInsAdmissionsLo.setOnClickListener { p0 ->
+            ToastUtils.showErrorCustomToast(requireContext(), "No Screens..!")
+        }
+    }
+
+    private fun handleWhatsappAssistanceLo() {
+        binding.whatsappAssistLo.setOnClickListener { p0 ->
+            ToastUtils.showErrorCustomToast(requireContext(), "No Screens..!")
+        }
+    }
+
+    private fun handleDietTipsLo() {
+        binding.dietTipsLo.setOnClickListener { p0 ->
+            ToastUtils.showErrorCustomToast(requireContext(), "No Screens..!")
+        }
+    }
+
+    private fun handleSymptomCheckerLo() {
+        binding.symptomCheckerLo.setOnClickListener { p0 ->
+            ToastUtils.showErrorCustomToast(requireContext(), "No Screens..!")
+        }
+    }
+
+    private fun handleHealthTalksLo() {
+        binding.healthTalksLo.setOnClickListener { p0 ->
+            startActivity(Intent(requireContext(), TestimonialVideosActivity::class.java))
+        }
+    }
+
+    private fun handleHealthMediaLo() {
+        binding.healthMediaLo.setOnClickListener { p0 ->
+            startActivity(Intent(requireContext(), HealthMediaActivity::class.java))
+        }
     }
 
     private fun handleNotificationImg() {
@@ -93,6 +144,12 @@ class HomeFragment : Fragment() {
         val linearLayout = GridLayoutManager(requireContext(), 4 )
         binding.quotesRv.layoutManager = linearLayout
         binding.quotesRv.adapter = adapter
+        adapter.setupListener(object : OnServiceItemClickListener{
+            override fun onItemClick(position: Int) {
+                ToastUtils.showErrorCustomToast(requireContext(), "No Screens in Figma..!")
+            }
+
+        })
     }
 
     private fun setupSurgeonSymptomsRecyclerView() {
@@ -115,13 +172,6 @@ class HomeFragment : Fragment() {
             }
 
         })
-    }
-
-    private fun setupHealthEducationCategoriesRecyclerView() {
-        val adapter = CategoriesAdapter()
-        val linearLayout = GridLayoutManager(requireContext(), 4 )
-        binding.healthEducationCategoriesRv.layoutManager = linearLayout
-        binding.healthEducationCategoriesRv.adapter = adapter
     }
 
     private fun setupHomeVisitServicesRecyclerView() {

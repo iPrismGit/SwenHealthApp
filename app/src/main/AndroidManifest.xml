@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SwenHealth">
         <activity
+            android:name=".activities.TestimonialVideosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".adapters.HealthMediaAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".activities.HealthMediaActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.SymptomCategoriesActivity"
             android:exported="false" />
         <activity
