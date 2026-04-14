@@ -10,10 +10,12 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iprism.swenhealth.R
 import com.iprism.swenhealth.activities.DoctorAppointmentCategoriesActivity
+import com.iprism.swenhealth.activities.HospitalDoctorsActivity
 import com.iprism.swenhealth.activities.MainActivity
 import com.iprism.swenhealth.activities.NotificationsActivity
 import com.iprism.swenhealth.activities.OnlineDoctorCategoriesActivity
 import com.iprism.swenhealth.activities.RedeemDiscountCouponsActivity
+import com.iprism.swenhealth.activities.SymptomCategoriesActivity
 import com.iprism.swenhealth.adapters.CategoriesAdapter
 import com.iprism.swenhealth.databinding.FragmentHomeBinding
 import com.iprism.swenhealth.databinding.FragmentMedicinesBinding
@@ -98,6 +100,21 @@ class HomeFragment : Fragment() {
         val linearLayout = GridLayoutManager(requireContext(), 4 )
         binding.surgeonSymptomsRv.layoutManager = linearLayout
         binding.surgeonSymptomsRv.adapter = adapter
+        adapter.setupListener(object : OnServiceItemClickListener{
+            override fun onItemClick(position: Int) {
+                if (position == 3){
+                    val intent = Intent(requireContext(), SymptomCategoriesActivity::class.java)
+                    intent.putExtra("tag", "Surgeon")
+                    startActivity(intent)
+                } else{
+                    val intent = Intent(requireContext(), HospitalDoctorsActivity::class.java)
+                    intent.putExtra("fragment", "Hospitals")
+                    startActivity(intent)
+                }
+
+            }
+
+        })
     }
 
     private fun setupHealthEducationCategoriesRecyclerView() {
@@ -119,6 +136,21 @@ class HomeFragment : Fragment() {
         val linearLayout = GridLayoutManager(requireContext(), 4 )
         binding.doctorSymptomsRv.layoutManager = linearLayout
         binding.doctorSymptomsRv.adapter = adapter
+        adapter.setupListener(object : OnServiceItemClickListener{
+            override fun onItemClick(position: Int) {
+                if (position == 3){
+                    val intent = Intent(requireContext(), SymptomCategoriesActivity::class.java)
+                    intent.putExtra("tag", "Symptoms")
+                    startActivity(intent)
+                } else{
+                    val intent = Intent(requireContext(), HospitalDoctorsActivity::class.java)
+                    intent.putExtra("fragment", "Hospitals")
+                    startActivity(intent)
+                }
+
+            }
+
+        })
     }
 
     private fun setupDoctorAppointmentsRecyclerView() {
@@ -132,9 +164,7 @@ class HomeFragment : Fragment() {
                     val intent = Intent(requireContext(), DoctorAppointmentCategoriesActivity::class.java)
                     startActivity(intent)
                 } else{
-                    val intent = Intent(requireContext(), MainActivity::class.java)
-                    intent.putExtra("fragment", "Hospitals")
-                    startActivity(intent)
+                    (activity as? MainActivity)?.changeFragment(1)
                 }
 
             }
