@@ -1,5 +1,6 @@
 package com.iprism.swenhealth.adapters
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -27,7 +28,7 @@ class FilterCatsAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(
         p0: RecyclerView.ViewHolder,
-        p1: Int
+        @SuppressLint("RecyclerView") p1: Int
     ) {
        val holder = p0 as FilterCatViewHolder
         holder.binding.apply {
