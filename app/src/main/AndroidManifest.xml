@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SwenHealth">
         <activity
+            android:name=".activities.HomeCareServiceHospitalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.HomeCareServiceSubCategoriesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.HomeCareServiceCategoriesActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.TestimonialVideosActivity"
             android:exported="false" />
         <activity

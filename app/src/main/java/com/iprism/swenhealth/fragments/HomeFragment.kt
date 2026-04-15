@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.iprism.swenhealth.R
 import com.iprism.swenhealth.activities.DoctorAppointmentCategoriesActivity
 import com.iprism.swenhealth.activities.HealthMediaActivity
+import com.iprism.swenhealth.activities.HomeCareServiceCategoriesActivity
+import com.iprism.swenhealth.activities.HomeCareServiceSubCategoriesActivity
 import com.iprism.swenhealth.activities.HospitalDoctorsActivity
 import com.iprism.swenhealth.activities.MainActivity
 import com.iprism.swenhealth.activities.NotificationsActivity
@@ -179,6 +181,20 @@ class HomeFragment : Fragment() {
         val linearLayout = GridLayoutManager(requireContext(), 4 )
         binding.homeVisitServicesRv.layoutManager = linearLayout
         binding.homeVisitServicesRv.adapter = adapter
+        adapter.setupListener(object : OnServiceItemClickListener{
+            override fun onItemClick(position: Int) {
+                if (position == 3){
+                    val intent = Intent(requireContext(), HomeCareServiceCategoriesActivity::class.java)
+                    intent.putExtra("tag", "HomeService")
+                    startActivity(intent)
+                }else {
+                    val intent = Intent(requireContext(), HomeCareServiceSubCategoriesActivity::class.java)
+                    intent.putExtra("fragment", "Hospitals")
+                    startActivity(intent)
+                }
+            }
+
+        })
     }
 
     private fun setupDoctorSymptomsRecyclerView() {
