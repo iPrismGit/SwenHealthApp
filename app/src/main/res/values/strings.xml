@@ -57,6 +57,7 @@
     <string name="house_no">House No. &amp; Floor</string>
     <string name="building_no">Building &amp; Block No (Optional)</string>
     <string name="landmark_area">Landmark &amp; Area Name (Optional)</string>
+    <string name="home_date_and_time">Home Visit Time &amp; Date</string>
     <string name="add_new_address">Add New Address</string>
     <string name="air_ambulance">Air Ambulance</string>
     <string name="ambulance_booking">Ambulance Booking</string>
