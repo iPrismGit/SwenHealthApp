@@ -113,7 +113,9 @@ class HomeFragment : Fragment() {
 
     private fun handleBookDiagnosticTestImg() {
         binding.diagnosticTestBtn.setOnClickListener { p0 ->
-            (activity as? MainActivity)?.changeFragment(4)
+            val intent = Intent(requireContext(), RedeemDiscountCouponsActivity::class.java)
+            intent.putExtra("tag", "DiagnosticCoupons")
+            startActivity(intent)
         }
     }
 
@@ -137,7 +139,9 @@ class HomeFragment : Fragment() {
 
     private fun handleRedeemCouponsLo() {
         binding.redeemCouponsLo.setOnClickListener { v ->
-            startActivity(Intent(requireContext(), RedeemDiscountCouponsActivity::class.java))
+            val intent = Intent(requireContext(), RedeemDiscountCouponsActivity::class.java)
+            intent.putExtra("tag", "Coupons")
+            startActivity(intent)
         }
     }
 

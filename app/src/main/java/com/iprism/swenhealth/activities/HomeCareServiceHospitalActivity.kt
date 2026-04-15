@@ -18,6 +18,7 @@ import com.iprism.swenhealth.R
 import com.iprism.swenhealth.adapters.HomeCareHospitalsAdapter
 import com.iprism.swenhealth.databinding.ActivityHomeCareServiceHospitalBinding
 import com.iprism.swenhealth.databinding.BookHomeServiceForBottomSheetBinding
+import com.iprism.swenhealth.databinding.CouponBillSummeryBottomSheetBinding
 import com.iprism.swenhealth.databinding.PaymentTypeBottomSheetBinding
 import com.iprism.swenhealth.interfaces.OnHomeCareServiceHospitalClickListener
 import com.iprism.swenhealth.utils.ToastUtils
@@ -54,6 +55,8 @@ class HomeCareServiceHospitalActivity : AppCompatActivity() {
                     val intent = Intent(this@HomeCareServiceHospitalActivity, HospitalDoctorsActivity::class.java)
                     intent.putExtra("tag", "Coupons")
                     startActivity(intent)
+                } else if (tag.equals("DiagnosticCoupons", true)){
+                    showBillBottomSheet(this@HomeCareServiceHospitalActivity)
                 } else{
                     showRegisterForBottomSheet(this@HomeCareServiceHospitalActivity)
                 }
@@ -61,6 +64,32 @@ class HomeCareServiceHospitalActivity : AppCompatActivity() {
             }
 
         })
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun showBillBottomSheet(context: Context) {
+        val bottomSheetDialog = BottomSheetDialog(context)
+        val labTestSelectMembersBottomSheetBinding = CouponBillSummeryBottomSheetBinding.inflate(
+            LayoutInflater.from(context))
+        bottomSheetDialog.setContentView(labTestSelectMembersBottomSheetBinding.root)
+        bottomSheetDialog.setOnShowListener { dialog -> val bottomSheet = (dialog as BottomSheetDialog).findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
+            bottomSheet?.setBackgroundResource(R.drawable.top_edges_bg)
+        }
+        labTestSelectMembersBottomSheetBinding.crossImg.setOnClickListener(View.OnClickListener {
+            bottomSheetDialog.cancel()
+        })
+
+        labTestSelectMembersBottomSheetBinding.doctorFeeTxt.visibility = View.GONE
+
+        labTestSelectMembersBottomSheetBinding.proceedBtn.setOnClickListener { p0 ->
+            val intent = Intent(this, SuccessActivity::class.java)
+            intent.putExtra("tag", "Diagnostic Center Registration Completed ")
+            startActivity(intent)
+        }
+//        labTestSelectMembersBottomSheetBinding.coupontDiscountTxt.text = "₹${details!!.couponDiscount}"
+//        labTestSelectMembersBottomSheetBinding.totalTxt.text = "₹${details!!.consultationFee}"
+//        labTestSelectMembersBottomSheetBinding.itemTotalTxt.text = "₹${price!!.discontPrice}"
+        bottomSheetDialog.show()
     }
 
     private fun handleBack() {

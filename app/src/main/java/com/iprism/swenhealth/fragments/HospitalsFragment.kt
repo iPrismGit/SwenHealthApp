@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iprism.swenhealth.R
+import com.iprism.swenhealth.activities.FilterActivity
 import com.iprism.swenhealth.activities.HospitalDetailsActivity
 import com.iprism.swenhealth.activities.NotificationsActivity
 import com.iprism.swenhealth.adapters.HospitalsAdapter
@@ -26,7 +27,14 @@ class HospitalsFragment : Fragment() {
         binding = FragmentHospitalsBinding.inflate(inflater, container, false)
         setupHospitalAdapter()
         handleNotificationImg()
+        handleFilter()
         return binding.root
+    }
+
+    private fun handleFilter() {
+        binding.filterIv.setOnClickListener { p0 ->
+            startActivity(Intent(requireContext(), FilterActivity::class.java))
+        }
     }
 
     private fun handleNotificationImg() {

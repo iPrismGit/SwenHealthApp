@@ -17,6 +17,7 @@ import com.iprism.swenhealth.interfaces.OnCouponAndOfferItemClickListener
 class RedeemDiscountCouponsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRedeemDiscountCouponsBinding
+    private var tag =""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +28,10 @@ class RedeemDiscountCouponsActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        tag = intent.getStringExtra("tag").toString()
+        if (tag.equals("DiagnosticCoupons", true)){
+            binding.titleTxt.text = "Diagnostic Test Coupons"
         }
         handleBack()
         setupCouponsRecyclerView()
@@ -39,9 +44,15 @@ class RedeemDiscountCouponsActivity : AppCompatActivity() {
         binding.counponsRv.layoutManager = linearLayoutManager
         adapter.setupListener(object : OnCouponAndOfferItemClickListener{
             override fun onItemClicked(position: String) {
-                val intent = Intent(this@RedeemDiscountCouponsActivity, SymptomCategoriesActivity::class.java)
-                intent.putExtra("tag", "Coupons")
-                startActivity(intent)
+                if (tag.equals("DiagnosticCoupons", true)){
+                    val intent = Intent(this@RedeemDiscountCouponsActivity, HomeCareServiceHospitalActivity::class.java)
+                    intent.putExtra("tag", tag)
+                    startActivity(intent)
+                }else{
+                    val intent = Intent(this@RedeemDiscountCouponsActivity, SymptomCategoriesActivity::class.java)
+                    intent.putExtra("tag", tag)
+                    startActivity(intent)
+                }
             }
 
         })
