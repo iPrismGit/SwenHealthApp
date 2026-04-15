@@ -1,5 +1,6 @@
 package com.iprism.swenhealth.activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,7 @@ import com.iprism.swenhealth.R
 import com.iprism.swenhealth.adapters.RedeemCouponsAdapter
 import com.iprism.swenhealth.databinding.ActivityRedeemDiscountCouponsBinding
 import com.iprism.swenhealth.databinding.FragmentMedicinesBinding
+import com.iprism.swenhealth.interfaces.OnCouponAndOfferItemClickListener
 
 class RedeemDiscountCouponsActivity : AppCompatActivity() {
 
@@ -35,6 +37,14 @@ class RedeemDiscountCouponsActivity : AppCompatActivity() {
         val linearLayoutManager = LinearLayoutManager(this)
         binding.counponsRv.adapter = adapter
         binding.counponsRv.layoutManager = linearLayoutManager
+        adapter.setupListener(object : OnCouponAndOfferItemClickListener{
+            override fun onItemClicked(position: String) {
+                val intent = Intent(this@RedeemDiscountCouponsActivity, SymptomCategoriesActivity::class.java)
+                intent.putExtra("tag", "Coupons")
+                startActivity(intent)
+            }
+
+        })
     }
 
     private fun handleBack() {

@@ -28,10 +28,12 @@ class SymptomCategoriesActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        intent.getStringExtra("tag").toString()
+        tag = intent.getStringExtra("tag").toString()
         if (tag.equals("symptoms", true)){
             binding.titleTxt.text = "Book Doctor With Symptoms"
-        }else{
+        } else if (tag.equals("Coupons", true)){
+            binding.titleTxt.text = "Free Doctor Consultations"
+        } else{
             binding.titleTxt.text = "Choose Surgeon With Symptoms"
         }
         handleBack()
@@ -45,8 +47,15 @@ class SymptomCategoriesActivity : AppCompatActivity() {
         binding.categoriesRv.layoutManager = linearLayoutManager
         adapter.setupListener(object  : OnServiceItemClickListener{
             override fun onItemClick(position: Int) {
-                val intent = Intent(this@SymptomCategoriesActivity, HospitalDoctorsActivity::class.java)
-                startActivity(intent)
+                if (tag.equals("Coupons", true)){
+                    val intent = Intent(this@SymptomCategoriesActivity, HomeCareServiceHospitalActivity::class.java)
+                    intent.putExtra("tag", tag)
+                    startActivity(intent)
+                }else{
+                    val intent = Intent(this@SymptomCategoriesActivity, HospitalDoctorsActivity::class.java)
+                    startActivity(intent)
+                }
+
             }
         })
     }

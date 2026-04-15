@@ -26,6 +26,7 @@ class HomeCareServiceHospitalActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeCareServiceHospitalBinding
     private var registerFor = ""
+    private var tag = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +38,7 @@ class HomeCareServiceHospitalActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        tag =  intent.getStringExtra("tag").toString()
         handleBack()
         setupAdapter()
     }
@@ -48,7 +50,14 @@ class HomeCareServiceHospitalActivity : AppCompatActivity() {
         binding.categoriesRv.layoutManager = layoutManager
         adapter.setupListener(object  : OnHomeCareServiceHospitalClickListener{
             override fun onItemClick(position: String) {
-                showRegisterForBottomSheet(this@HomeCareServiceHospitalActivity)
+                if (tag.equals("Coupons", true)){
+                    val intent = Intent(this@HomeCareServiceHospitalActivity, HospitalDoctorsActivity::class.java)
+                    intent.putExtra("tag", "Coupons")
+                    startActivity(intent)
+                } else{
+                    showRegisterForBottomSheet(this@HomeCareServiceHospitalActivity)
+                }
+
             }
 
         })
