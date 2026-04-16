@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.iprism.swenhealth.R
 
 class SplashActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -21,9 +22,10 @@ class SplashActivity : AppCompatActivity() {
         }
         val handler = Handler()
         handler.postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }, 2000)
     }
+
 }

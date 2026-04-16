@@ -1,5 +1,6 @@
 package com.iprism.swenhealth.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.iprism.swenhealth.R
+import com.iprism.swenhealth.activities.MedicineCartActivity
 import com.iprism.swenhealth.adapters.HomePagerAdapter
 import com.iprism.swenhealth.adapters.MedicinesPagerAdapter
 import com.iprism.swenhealth.databinding.FragmentMedicinesBinding
@@ -25,7 +27,14 @@ class MedicinesFragment : Fragment() {
         setupViewPager()
         handleWellnessBtn()
         handlePharmacyBtn()
+        handleCartBtn()
         return binding.root
+    }
+
+    private fun handleCartBtn() {
+        binding.cartIv.setOnClickListener { p0 ->
+            startActivity(Intent(requireContext(), MedicineCartActivity::class.java))
+        }
     }
 
     private fun handleWellnessBtn() {

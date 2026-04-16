@@ -9,10 +9,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iprism.swenhealth.R
 import com.iprism.swenhealth.activities.DiagnosticPackagesActivity
+import com.iprism.swenhealth.activities.DiagnosticSummeryActivity
 import com.iprism.swenhealth.adapters.DiagnosticsAndLabsAdapter
 import com.iprism.swenhealth.databinding.ActivityMainBinding
 import com.iprism.swenhealth.databinding.FragmentLabTestBinding
 import com.iprism.swenhealth.interfaces.OnHospitalClickListener
+import okhttp3.internal.readFieldOrNull
 
 class LabTestFragment : Fragment() {
 
@@ -24,7 +26,14 @@ class LabTestFragment : Fragment() {
     ): View? {
         binding = FragmentLabTestBinding.inflate(inflater, container, false)
         setupAdapter()
+        handleBack()
         return binding.root
+    }
+
+    private fun handleBack() {
+        binding.cartImg.setOnClickListener { p0 ->
+            startActivity(Intent(requireContext(), DiagnosticSummeryActivity::class.java))
+        }
     }
 
     private fun setupAdapter() {

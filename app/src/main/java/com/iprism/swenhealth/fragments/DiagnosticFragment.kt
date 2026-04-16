@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iprism.swenhealth.R
 import com.iprism.swenhealth.activities.DiagnosticPackagesActivity
+import com.iprism.swenhealth.activities.DiagnosticSummeryActivity
 import com.iprism.swenhealth.adapters.DiagnosticsAndLabsAdapter
 import com.iprism.swenhealth.databinding.ActivityMainBinding
 import com.iprism.swenhealth.databinding.FragmentDiagnosticBinding
@@ -24,7 +25,14 @@ class DiagnosticFragment : Fragment() {
     ): View? {
         binding = FragmentDiagnosticBinding.inflate(inflater, container, false)
         setupAdapter()
+        handleCart()
         return binding.root
+    }
+
+    private fun handleCart() {
+        binding.cartImg.setOnClickListener { p0 ->
+            startActivity(Intent(requireContext(), DiagnosticSummeryActivity::class.java))
+        }
     }
 
     private fun setupAdapter() {
